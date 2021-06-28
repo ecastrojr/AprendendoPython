@@ -1,6 +1,9 @@
 def computador_escolhe_jogada(n, m):
     if n % (m+1) == 0:
-        return m - 1
+        if m > n:
+            return n
+        else:
+            return m - 1
     else:
         return m
 
@@ -70,10 +73,11 @@ def campeonato():
     pc = 0
     u = 0
     print("Voce escolheu um campeonato!")
-    print("")
     while i <= 3:
+        print("")
         print("**** Rodada", i,"**** ")
         print("")
+        i = i + 1
         if partida() == "computador":
             pc = pc + 1
         else:
@@ -83,7 +87,7 @@ def campeonato():
     print("**** Final do campeonato! ****")
     print("")
     print("Placar: Você", u," X", 3," Computador")   
-    return
+    return u
 
 print("")
 print("Bem-vindo ao jogo do NIM! Escolha:")
