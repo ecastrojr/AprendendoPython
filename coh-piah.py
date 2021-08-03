@@ -75,8 +75,30 @@ def compara_assinatura(as_a, as_b):
 
 def calcula_assinatura(texto):
     '''IMPLEMENTAR. Essa funcao recebe um texto e deve devolver a assinatura do texto.'''
+
+    ''' wal = Tamanho médio de palavra é a soma dos tamanhos das palavras dividida pelo número total de palavras'''
+    wal = float(input("Entre o tamanho médio de palavra:"))
+    ttr = float(input("Entre a relação Type-Token:"))
+    hlr = float(input("Entre a Razão Hapax Legomana:"))
+    sal = float(input("Entre o tamanho médio de sentença:"))
+    sac = float(input("Entre a complexidade média da sentença:"))
+    pal = float(input("Entre o tamanho medio de frase:"))
+
+    return [wal, ttr, hlr, sal, sac, pal]
     pass
 
 def avalia_textos(textos, ass_cp):
     '''IMPLEMENTAR. Essa funcao recebe uma lista de textos e uma assinatura ass_cp e deve devolver o numero (1 a n) do texto com maior probabilidade de ter sido infectado por COH-PIAH.'''
     pass
+
+texto = le_textos()
+sentenca = separa_sentencas(texto[0])
+print(sentenca)
+frase = separa_frases(sentenca[0])
+print(frase)
+palavra = separa_palavras(frase[0])
+print(palavra)
+print(n_palavras_unicas(palavra))
+print(n_palavras_diferentes(palavra))
+
+
